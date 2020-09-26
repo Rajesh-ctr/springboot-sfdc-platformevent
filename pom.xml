@@ -12,7 +12,7 @@
 	<groupId>com.github.ggan</groupId>
 	<artifactId>springboot-sfdc-platformevent</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>springboot-sfdc-platformevent</name>
 	<description>springboot-sfdc-platformevent</description>
 
