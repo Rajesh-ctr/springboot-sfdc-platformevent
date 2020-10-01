@@ -127,10 +127,10 @@ public class SalesforcePlatformeventConfig {
 			subscription = empConnector.subscribe(salesforceEventName, replayFrom, consumer).get(5, TimeUnit.SECONDS);
 		} catch (java.util.concurrent.ExecutionException sube) {
 			logger.error("ExecutionException Error from platform event " + salesforceEventName, sube);
-			//System.exit(1);
+			System.exit(1);
 		} catch (Exception e) {
 			logger.error("Error when starting TopicSubscription " + salesforceEventName, e);
-			//System.exit(1);
+			System.exit(1);
 		}
 		return subscription;
 	}

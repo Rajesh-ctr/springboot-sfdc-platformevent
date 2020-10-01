@@ -95,14 +95,14 @@ public class SalesforceAccessTokenProvider {
 					    @SuppressWarnings("unchecked")
 						Map<String, String> oauthLoginResponse = (Map<String, String>)
 					    JSON.parse(EntityUtils.toString(response.getEntity()));
-					    //System.out.println("OAuth login response");
+					    System.out.println("OAuth login response");
 					    logger.debug("###### OAuth login response ######");
 					    for (Map.Entry<String, String> entry : oauthLoginResponse.entrySet()) 
 					    {
-					        //System.out.println(String.format("  %s = %s", entry.getKey(), entry.getValue()));
+					        System.out.println(String.format("  %s = %s", entry.getKey(), entry.getValue()));
 					        logger.debug(String.format("  %s = %s", entry.getKey(), entry.getValue()));
 					    }
-					    //System.out.println("");
+					    System.out.println("");
 					 
 					
 					    
@@ -116,28 +116,28 @@ public class SalesforceAccessTokenProvider {
 					    HttpResponse userInfoResponse = client.execute(userInfoRequest);
 					    Map<String, Object> userInfo = (Map<String, Object>)
 					    JSON.parse(EntityUtils.toString(userInfoResponse.getEntity()));
-					    //System.out.println("User info response");
+					    System.out.println("User info response");
 					    logger.debug("##### User info response ######");
 					    for (Map.Entry<String, Object> entry : userInfo.entrySet()) 
 					    {
-					        //System.out.println(String.format("  %s = %s", entry.getKey(), entry.getValue()));
+					        System.out.println(String.format("  %s = %s", entry.getKey(), entry.getValue()));
 					        logger.debug(String.format("  %s = %s", entry.getKey(), entry.getValue()));
 					    }
-					    //System.out.println("");
+					    System.out.println("");
 					    
 					    
 					    // Use the user info in interesting ways.
-					    //System.out.println("Username is " + userInfo.get("username"));
+					    System.out.println("Username is " + userInfo.get("username"));
 					    logger.debug("Username is " + userInfo.get("username"));
-					    //System.out.println("User's email is " + userInfo.get("email"));
+					    System.out.println("User's email is " + userInfo.get("email"));
 					    logger.debug("User's email is " + userInfo.get("email"));
 					    Map<String, String> urls = (Map<String, String>)userInfo.get("urls");
-					    //System.out.println("REST API url is " + urls.get("rest").replace("{version}", "50.0"));
+					    System.out.println("REST API url is " + urls.get("rest").replace("{version}", "50.0"));
 					    logger.debug("REST API url is " + urls.get("rest").replace("{version}", "50.0"));
 					
 				} catch (Exception e) {
 					logger.error("Failed to get salesforce access token SalesforceAccessTokenProvider: updateBayeuxParametersWithSalesforceAccessToken ", e);
-					//System.exit(1);
+					System.exit(1);
 				}
 				return token;
 			}

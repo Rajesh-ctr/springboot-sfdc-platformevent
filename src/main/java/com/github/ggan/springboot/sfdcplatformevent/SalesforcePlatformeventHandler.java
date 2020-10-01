@@ -21,6 +21,7 @@ public class SalesforcePlatformeventHandler {
 		logger.info("SalesforcePlatformeventHandler :: handleRequest");
 		logger.debug("Received payload from platform event " + salesforceEventName + " with replayId: " + replayId);
 		logger.debug("Payload ::::: "+payload);
+		System.out.println("Payload ::::: "+payload);
 		// cdcEventsServiceImpl.insertCDCAuditLog(cdcAuditLogObj);
 		try {
 			if (payload != null && payload != "") {
