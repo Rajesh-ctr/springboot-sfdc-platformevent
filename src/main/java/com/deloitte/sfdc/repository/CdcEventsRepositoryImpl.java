@@ -27,8 +27,8 @@ public class CdcEventsRepositoryImpl implements CdcEventsRepository {
 	public int insertCDCAuditLog(CDCAuditLog cdcAuditLogObj) throws Exception {
 		logger.info("CdcEventsRepositoryImpl::insertCDCAuditLog");
 		try {
-			final String auditLogQuery = " insert into CDCAuditLog(cdcAuditLogName, cdcField, cdcNewValue, cdcObject, cdcOperation, cdcOwner, cdcOwnerName, cdcOwnerProfile, cdcRecordId) "
-					+ "values(:CDC_AuditLogName__c, :CDC_Field__c, :CDC_NewValue__c, :CDC_Object__c, :CDC_Operation__c, :CDC_Owner__c, :CDC_OwnerName__c, :CDC_OwnerProfile__c, :CDC_RecordId__c)";
+			final String auditLogQuery = " insert into CDCAuditLog(cdcAuditLogName, cdcField, cdcNewValue, cdcObject, cdcOperation, cdcOwner, cdcOwnerName, cdcOwnerProfile, cdcRecordId, cdcCreatedDate) "
+					+ "values(:CDC_AuditLogName__c, :CDC_Field__c, :CDC_NewValue__c, :CDC_Object__c, :CDC_Operation__c, :CDC_Owner__c, :CDC_OwnerName__c, :CDC_OwnerProfile__c, :CDC_RecordId__c, :CDC_CreatedDate__c)";
 			logger.debug("Query for auditlog : " + auditLogQuery);
 			KeyHolder holder = new GeneratedKeyHolder();
 			SqlParameterSource param = new MapSqlParameterSource()
@@ -40,7 +40,8 @@ public class CdcEventsRepositoryImpl implements CdcEventsRepository {
 					.addValue("CDC_Owner__c", cdcAuditLogObj.getCDC_Owner__c())
 					.addValue("CDC_OwnerName__c", cdcAuditLogObj.getCDC_OwnerName__c())
 					.addValue("CDC_OwnerProfile__c", cdcAuditLogObj.getCDC_OwnerProfile__c())
-					.addValue("CDC_RecordId__c", cdcAuditLogObj.getCDC_RecordId__c());
+					.addValue("CDC_RecordId__c", cdcAuditLogObj.getCDC_RecordId__c())
+				        .addValue("CDC_CreatedDate__c", cdcAuditLogObj.getCDC_CreatedDate__c());
 			logger.debug("Query parameters : " + param.toString());
 			return template.update(auditLogQuery, param, holder);
 		} catch (Exception ex) {
