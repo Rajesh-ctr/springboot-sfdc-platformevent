@@ -1,4 +1,5 @@
 package com.deloitte.sfdc.model;
+import java.util.Date;
 
 public class CDCAuditLog {
 	
