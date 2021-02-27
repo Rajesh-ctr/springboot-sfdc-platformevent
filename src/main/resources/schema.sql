@@ -8,5 +8,6 @@ cdcOperation varchar(100),
 cdcOwner varchar(255),
 cdcOwnerName varChar(255),
 cdcOwnerProfile varChar(255),
-cdcRecordId varchar(100)
+cdcRecordId varchar(100),
+cdcCreatedDate date  
 );
