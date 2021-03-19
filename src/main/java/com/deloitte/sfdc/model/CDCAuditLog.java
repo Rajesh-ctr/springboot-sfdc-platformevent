@@ -12,7 +12,7 @@ public class CDCAuditLog {
 	private String CDC_OwnerName__c;
 	private String CDC_OwnerProfile__c;
 	private String CDC_RecordId__c;
-	private Date CDC_CreatedDate__c;
+	private String CDC_CreatedDate__c;
 	
 	public String getCDC_AuditLogName__c() {
 		return CDC_AuditLogName__c;
@@ -69,10 +69,10 @@ public class CDCAuditLog {
 		CDC_RecordId__c = cDC_RecordId__c;
 	}
 	
-	public Date getCDC_CreatedDate__c() {
+	public String getCDC_CreatedDate__c() {
 		return CDC_CreatedDate__c;
 	}
-	public void setCDC_CreatedDate__c(Date cDC_CreatedDate__c) {
+	public void setCDC_CreatedDate__c(String cDC_CreatedDate__c) {
 		CDC_CreatedDate__c = cDC_CreatedDate__c;
 	}
 	
